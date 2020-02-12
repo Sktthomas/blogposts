@@ -7,7 +7,7 @@ import App from './components/App'
 import reducers from './reducers';
 import thunk from 'redux-thunk'
 
-const store = createStore(reducers, applyMiddleware(thunk)) //hooking up middleware to store
+const store = createStore(reducers, applyMiddleware(thunk)) //hooking up middleware to store. When we dispatch an action, it gets routed through middleware, so we can return a function as a payload????
 
 
 ReactDOM.render(

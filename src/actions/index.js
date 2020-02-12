@@ -6,13 +6,16 @@
 import jsonPlaceholder from '../apis/JSONPlaceholder'
 import _ from 'lodash';
 
+//An action creator that calls other actions
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
    await dispatch(fetchPosts());
 
 /*    const userIds = _.uniq(_.map(getState().posts, 'userId')) //memoizes only the userId property of the posts, as well as mapping each unique id to an array
 
    userIds.forEach(id => dispatch(fetchUser(id)));
- */
+ 
+ 
+   */
 //alternative way to do the above by using chain
    _.chain(getState().posts)
     .map('userId')
