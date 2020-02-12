@@ -6,6 +6,12 @@ export const fetchPosts = () => async (dispatch) => {
     dispatch({ type: 'FETCH_POSTS', payload: response.data})
 }
 
+export const fetchUser = (id) => async(dispatch) => {
+    const response = await jsonPlaceholder.get(`/users/${id}`);
+
+    dispatch({type: 'FETCH_USER', payload: response.data });
+}
+
     //const response = await jsonPlaceholder.get('/posts'); //This CANNOT BE USED! WE HAVE TO USE MIDDLEWARE FIRST!!
     //this is because the async and await statements make the return value turn out to be something way different at compile-time. See babeljs.io
     //it will not be an action object like below, but instead the request object. 

@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { fetchPosts } from '../actions';
+import UserHeader from './userHeader';
 
 class PostList extends React.Component {
 
@@ -20,6 +21,8 @@ class PostList extends React.Component {
                             <h2>{post.title}</h2>
                             <p>{post.body}</p>
                         </div>
+                        <br/>
+                        <UserHeader userId={post.userId}/> {/*WE can reference userId because it is part of the API response*/}
                     </div>
                 </div>
             )
